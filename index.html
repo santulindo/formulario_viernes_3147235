@@ -1,212 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="_CSS/estilos.css">
-    <link rel="stylesheet" href="_IMG/descarga.jpg">
-    <title>Bienvenido al formulario de Santiago </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario SENA V1</title>
+  <link rel="stylesheet" href="/CSS/estilos.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1 class="h1">📝 Formulario de Registro Para Gansters</h1>
+  <h1>FORMULARIO SENA V1</h1>
+  <h2>GRACIAS POR DEJAR SUS DATOS</h2>
 
-        <!-- FORMULARIO HTML -->
-        <form id="miFormulario">
-            <!-- Campo de texto simple -->
-            <div class="form-group">
-                <label for="nombre">👤 Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre completo" autofocus
-                    pattern="[A-za-z ]{3,40}" />
-            </div>
+  <form id="senaForm">
+    <label>Nombre</label>
+    <input type="text" placeholder="Por favor ingrese su nombre" required>
 
-            <!-- Campo de email -->
-            <div class="form-group">
-                <label for="email"> 📧 Correo electrónico:</label>
-                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com" />
-            </div>
-            
-            <div>
-            <label for="meeting-time">Fecha y Hora de Llenarlo:</label>
-            <input
-            type="datetime-local"
-            id="meeting-time"
-            name="meeting-time"
-           value="2018-06-12T19:30"
-            min="2018-06-07T00:00"
-            max="2018-06-14T00:00" />
-          </div>
-  
+    <label>Email</label>
+    <input type="email" placeholder="Por favor ingrese su  email" required>
 
-           <div class="form-group">
-             <label for="telefono">📱 Número de teléfono:</label>
-             <input type="tel" id="telefono" name="telefono" required placeholder="Ej. +57 351 1234567" pattern="[0-9+ ]{7,15}" />
-           </div>
+    <label>Edad</label>
+    <input type="number" placeholder="Por favor ingrese su edad " required>
 
-            <div class="form-group">
-                <label>🌈Ingresa tu orientacion sexual:</label>
-                <input type="radio" id="Heterosexual" name="Bisexual" value="Otra" required />
-                <label for="principiante" style="display: inline; margin-left: 5px">Heterosexual</label><br />
-                <input type="radio" id="Heterosexual" name="Bisexual" value="Otra" />
-                <label for="intermedio" style="display: inline; margin-left: 5px">Bisexual</label><br />
-                <input type="radio" id="Heterosexual" name="Bisexual" value="Otra" />
-                <label for="avanzado" style="display: inline; margin-left: 5px">Otra</label>
-            </div>
+    <label>Seleccione una opcion</label>
+    <select required>
+      <option value="">Opciones</option>
+      <option value="Option 1">Option 1</option>
+      <option value="Option 2">Option 2</option>
+    </select>
 
-     
-    
-            <!-- Campo de número -->
-            <div class="form-group">
-                <label for="edad"> 👶Edad:</label>
-                <input type="number" id="edad" name="edad" min="18" max="100" required placeholder="Tu edad" />
-            </div>            
-
-            <!-- Campo de selección -->
-            <div class="form-group">
-                <label for="ciudad"> 🏙️ Ciudad:</label>
-                <select id="ciudad" name="ciudad" required>
-                    <option value="">Selecciona tu ciudad</option>
-                    <option value="bogota">Bogotá</option>
-                    <option value="medellin">Medellín</option>
-                    <option value="cali">Cali</option>
-                    <option value="barranquilla">Barranquilla</option>
-                    <option value="otra">Otra</option>
-                </select>
-            </div>
-
-            <!-- Campos de radio -->
-            <div class="form-group">
-                <label>👨‍💻Experiencia en programación:</label>
-                <input type="radio" id="principiante" name="experiencia" value="principiante" required />
-                <label for="principiante" style="display: inline; margin-left: 5px">Principiante</label><br />
-
-                <input type="radio" id="intermedio" name="experiencia" value="intermedio" />
-                <label for="intermedio" style="display: inline; margin-left: 5px">Intermedio</label><br />
-
-                <input type="radio" id="avanzado" name="experiencia" value="avanzado" />
-                <label for="avanzado" style="display: inline; margin-left: 5px">Avanzado</label>
-            </div>
-
-            <!-- Checkbox -->
-            <div class="form-group">
-                <input type="checkbox" id="acepto" name="acepto" required />
-                <label for="acepto" style="display: inline; margin-left: 5px">
-                    Acepto los términos y condiciones
-                </label>
-            </div>
-
-            <!-- Área de texto -->
-            <div class="form-group">
-                <label for="comentarios">Comentarios adicionales:</label>
-                <textarea id="comentarios" name="comentarios" rows="4"
-                    placeholder="Cuéntanos algo más sobre ti (opcional)"></textarea>
-            </div>
-
-            <!-- Botón de envío -->
-            <button type="submit">🚀 Enviar Formulario</button>
-        </form>
-
-        <!-- ÁREA DONDE SE MOSTRARÁN LOS RESULTADOS -->
-        <div id="resultado" class="resultado">
-            <h3>✅ ¡Formulario enviado exitosamente!</h3>
-            <p>Estos son los datos que enviaste:</p>
-            <div id="datosEnviados"></div>
-        </div>
+    <label>Planeas comprar una moto en 5 años?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="planToBuyCar" value="Yes" required> Shi </label>
+      <label><input type="radio" name="planToBuyCar" value="No"> No</label>
+      <label><input type="radio" name="planToBuyCar" value="Maybe"> Talvez </label>
     </div>
 
-    <script>
-        // 🎯 SIMULACIÓN DEL ENVÍO DEL FORMULARIO
+    <label>Cual es la marca de la moto favorita?</label>
+    <select required>
+      <option value="">Select One Option</option>
+      <option value="Yamaha">Yamaha</option>
+      <option value="AKT">AKT</option>
+      <option value="Suzuki">Suzuki</option>
+    </select>
 
-        // Esperar a que el formulario sea enviado
-        document
-            .getElementById('miFormulario')
-            .addEventListener('submit', function (evento) {
-                // 1. Prevenir que la página se recargue (comportamiento por defecto)
-                evento.preventDefault();
+    <label>Que tipo de tranposte tienes my rey ?</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" value="Carro"> Carro</label>
+      <label><input type="checkbox" value="Barco"> Barco</label>
+      <label><input type="checkbox" value="Bicicleta"> Bicicleta</label>
+      <label><input type="checkbox" value="Moto"> Moto</label>
+      <label><input type="checkbox" value="Avion"> Avion </label>
+    </div>
 
-                // 2. Capturar todos los datos del formulario
-                const formulario = evento.target;
-                const datosFormulario = new FormData(formulario);
+    <label>Alguna sugerencia deja aqui ?</label>
+    <textarea placeholder="Por favor deja tus comentarios"></textarea>
 
-                // 3. Mostrar los datos en la consola (para estudiantes avanzados)
-                console.log('📊 Datos del formulario:');
-                for (let [campo, valor] of datosFormulario.entries()) {
-                    console.log(`${campo}: ${valor}`);
-                }
+    <button type="Enviar">Enviar</button>
+  </form>
 
-                // 4. Convertir los datos a un formato legible
-                let datosHTML = '';
-
-                // Recorrer cada campo y crear HTML para mostrar
-                for (let [campo, valor] of datosFormulario.entries()) {
-                    // Hacer más legibles los nombres de los campos
-                    let nombreCampo = campo;
-                    switch (campo) {
-                        case 'nombre':
-                            nombreCampo = 'Nombre completo';
-                            break;
-                        case 'email':
-                            nombreCampo = 'Correo electrónico';
-                            break;
-                        case 'edad':
-                            nombreCampo = 'Edad';
-                            break;
-                        case 'ciudad':
-                            nombreCampo = 'Ciudad';
-                            break;
-                        case 'experiencia':
-                            nombreCampo = 'Experiencia en programación';
-                            break;
-                        case 'acepto':
-                            nombreCampo = 'Términos aceptados';
-                            break;
-                        case 'comentarios':
-                            nombreCampo = 'Comentarios';
-                            break;
-                    }
-
-                    // Si el campo tiene valor, mostrarlo
-                    if (valor && valor.trim() !== '') {
-                        datosHTML += `
-                        <div class="dato">
-                            <span class="etiqueta">${nombreCampo}:</span> ${valor}
-                        </div>
-                    `;
-                    }
-                }
-
-                // 5. Mostrar los resultados en la página
-                document.getElementById('datosEnviados').innerHTML = datosHTML;
-                document.getElementById('resultado').style.display = 'block';
-
-                // 6. Scroll suave hacia los resultados
-                document.getElementById('resultado').scrollIntoView({
-                    behavior: 'smooth',
-                });
-
-                // 7. Mensaje de confirmación adicional
-                alert(
-                    '¡Formulario enviado correctamente! 🎉\nRevisa los datos más abajo.'
-                );
-            });
-
-        // 🎯 FUNCIONALIDAD EXTRA: Limpiar formulario
-        function limpiarFormulario() {
-            document.getElementById('miFormulario').reset();
-            document.getElementById('resultado').style.display = 'none';
-        }
-
-        // Agregar botón de limpiar después del envío
-        document.addEventListener('DOMContentLoaded', function () {
-            const contenedor = document.querySelector('.container');
-            const botonLimpiar = document.createElement('button');
-            botonLimpiar.innerHTML = '🗑️ Limpiar Formulario';
-            botonLimpiar.style.backgroundColor = '#ff9800';
-            botonLimpiar.style.marginTop = '10px';
-            botonLimpiar.onclick = limpiarFormulario;
-            contenedor.appendChild(botonLimpiar);
-        });
-    </script>
+  <script src="validacion.js"></script>
 </body>
 </html>
